@@ -15,12 +15,14 @@ function totalAmout(tips, bills) {
   return total;
 }
 let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
-let tips = [];
-tips.push(calcTip(bills));
-let totals = [];
-totals.push(totalAmout(tips, bills));
+let tips = calcTip(bills);
+tips.push(tips);
+let totals = totalAmout(tips, bills);
+totals.push(totals);
 console.log(`---------Billamounts are----------\n${bills} `);
 console.log(`---------tips amount on bills amount are----------\n${tips} `);
 console.log(
   `--------- your total amount is------------------------\n ${totals}`
 );
+console.log(totals.length);
+console.log(bills.length);
