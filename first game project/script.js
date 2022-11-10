@@ -14,3 +14,27 @@
 //     document.querySelector('.guess').value;
 // });
 //understood
+
+// Lets begin with bulding  game
+
+const between = Math.floor(Math.random() * 20);
+console.log(between);
+document.querySelector('.check').addEventListener('click', function () {
+  const guess = document.querySelector('.guess').value;
+  const score = Number(document.querySelector('.score').textContent);
+  if (!guess) {
+    document.querySelector('.message').textContent = '⛔ No Number Entered';
+  } else if (guess > between) {
+    document.querySelector('.message').textContent = '👆 Number Is Higher...';
+    document.querySelector('.score').textContent = score - 1;
+  } else if (guess < between) {
+    document.querySelector('.message').textContent = '👇 Number Is Lower...';
+    document.querySelector('.score').textContent = score - 1;
+  } else {
+    document.querySelector('.message').textContent = '🤝 Correct  guess';
+    document.querySelector('.number').textContent = guess;
+  }
+});
+// document.querySelector('.again').addEventListener('click', function () {
+//   index.realo;
+// });
