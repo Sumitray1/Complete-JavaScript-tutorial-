@@ -17,24 +17,47 @@
 
 // Lets begin with bulding  game
 
-const between = Math.floor(Math.random() * 20);
-console.log(between);
+let between = Math.floor(Math.random() * 20);
+let highScore = 0;
+// console.log(between);
 document.querySelector('.check').addEventListener('click', function () {
-  const guess = document.querySelector('.guess').value;
-  const score = Number(document.querySelector('.score').textContent);
-  if (!guess) {
-    document.querySelector('.message').textContent = '⛔ No Number Entered';
-  } else if (guess > between) {
-    document.querySelector('.message').textContent = '👆 Number Is Higher...';
-    document.querySelector('.score').textContent = score - 1;
-  } else if (guess < between) {
-    document.querySelector('.message').textContent = '👇 Number Is Lower...';
-    document.querySelector('.score').textContent = score - 1;
+  let guess = document.querySelector('.guess').value;
+  let score = Number(document.querySelector('.score').textContent);
+  if (score > 1) {
+    if (!guess) {
+      document.querySelector('.message').textContent = '⛔ No Number Entered';
+      document.querySelector('body').style.backgroundColor = '	#EE4B2B';
+    } else if (guess > 20) {
+      document.querySelector('.message').textContent = '⚠️Out Of Range...';
+      document.querySelector('body').style.backgroundColor = '#FEDE00';
+    } else if (guess > between) {
+      document.querySelector('.message').textContent = '👆 Number Is Lower...';
+      document.querySelector('.score').textContent = score - 1;
+    } else if (guess < between) {
+      document.querySelector('.message').textContent = '👇 Number Is Higher...';
+      document.querySelector('.score').textContent = score - 1;
+    } else {
+      document.querySelector('.message').textContent = '🤝 Correct  guess';
+      document.querySelector('.number').textContent = guess;
+      document.querySelector('body').style.backgroundColor = '#00FF00';
+      if (score > highScore) {
+        highScore = score;
+        document.querySelector('.highscore').textContent = highScore;
+      }
+    }
   } else {
-    document.querySelector('.message').textContent = '🤝 Correct  guess';
-    document.querySelector('.number').textContent = guess;
+    document.querySelector('.message').textContent = '🥹 Game over';
+    document.querySelector('.score').textContent = 0;
+    document.querySelector('body').style.backgroundColor = '#FF0000';
   }
+  document.querySelector('.again').addEventListener('click', function () {
+    score = 20;
+    between = Math.floor(Math.random() * 20);
+    // console.log(between);
+    document.querySelector('.message').textContent = 'Start guessing...';
+    document.querySelector('.score').textContent = score;
+    document.querySelector('.number').textContent = '?';
+    document.querySelector('.guess').value = '';
+    document.querySelector('body').style.backgroundColor = '#222';
+  });
 });
-// document.querySelector('.again').addEventListener('click', function () {
-//   index.realo;
-// });
