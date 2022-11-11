@@ -19,3 +19,4 @@ for (let i = 0; i < BtnModal.length; i++) {
   });
 }
 btnClose.addEventListener('click', closeMsgBox);
+overlayHidden.addEventListener('click', closeMsgBox);
