@@ -20,3 +20,11 @@ for (let i = 0; i < BtnModal.length; i++) {
 }
 btnClose.addEventListener('click', closeMsgBox);
 overlayHidden.addEventListener('click', closeMsgBox);
+//for closing overlays using "escape key"
+document.addEventListener('keydown', function (e) {
+  console.log(e.key);
+
+  if (e.key == 'Escape' && !modalHidden.classList.contains('.hidden')) {
+    closeMsgBox();
+  }
+});
