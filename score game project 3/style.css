@@ -68,6 +68,8 @@ main {
 }
 .player--active .name {
   font-weight: 700;
+  border: 2px solid rgb(21, 17, 17);
+  border-radius: 5px;
 }
 .player--active .score {
   font-weight: 400;
@@ -170,4 +172,85 @@ main {
 }
 .btn:hover {
   background-color: rgba(217, 221, 225, 0.852);
+}
+header {
+  position: absolute;
+  width: 106.5rem;
+  height: 59rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgb(0 0 0 / 25%);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+}
+.first {
+  position: absolute;
+  font-size: 7.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  word-spacing: 1.9px;
+  font-weight: 300;
+  margin: 35px 85px;
+  font-weight: bolder;
+  color: rgb(246, 247, 244);
+}
+
+.Player1 {
+  position: relative;
+  display: block;
+  font-size: 5.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  word-spacing: 1.9px;
+  font-weight: 300;
+  font-weight: bold;
+  color: rgb(246, 247, 244);
+  margin: 186px 99px;
+}
+.Player2 {
+  position: relative;
+  display: block;
+  font-size: 5.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  word-spacing: 1.9px;
+  font-weight: 300;
+  font-weight: bold;
+  color: rgb(246, 247, 244);
+  margin-top: 186px;
+  margin-left: 240px;
+}
+
+.PLAYER1Name {
+  position: absolute;
+  display: block;
+  margin: 268px 700px;
+  height: 25px;
+  width: 250px;
+  border-radius: 5px;
+  text-align: center;
+  padding: 18px;
+  background-color: #fbdfe0;
+  border-width: 0;
+}
+.PLAYER2Name {
+  position: absolute;
+  display: block;
+  margin: 268px 99px;
+  height: 25px;
+  width: 248px;
+  border-radius: 5px;
+  text-align: center;
+  padding: 18px;
+  background-color: #fbdfe0;
+  border-width: 0;
+}
+
+.btn--start {
+  top: 39.3rem;
+}
+.btn--rule {
+  top: 48.3rem;
 }

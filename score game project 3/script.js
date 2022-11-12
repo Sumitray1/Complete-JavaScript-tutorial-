@@ -1,15 +1,54 @@
 'use strict';
-//Selecting and storing player score in variable
+
+//selecting first page components
+let firstPage = document.querySelector('.btn--start');
+let firstPageInfo = document.querySelector('.header');
+let secondPage = document.querySelector('.main-Content');
+//player name
+let player1Name = document.getElementById('name--0');
+let player2Name = document.getElementById('name--1');
+//staring page player name
+
+//starting condition
+let startingCondition = function () {
+  player1TotalScore.textContent = 0;
+  player2TotalScore.textContent = 0;
+  diceImage.classList.add('hidden');
+  BothCurrentCore.textContent = 0;
+};
+
+let changingPlayerName = function () {
+  let firsPlayerName = document.querySelector('.PLAYER2Name').value;
+  let secondPlayerName = document.querySelector('.PLAYER1Name').value;
+  player1Name.textContent = firsPlayerName;
+  player2Name.textContent = secondPlayerName;
+};
+//switching from first page to second page
+firstPage.addEventListener('click', function () {
+  firstPageInfo.classList.add('hidden');
+  secondPage.classList.remove('hidden');
+  changingPlayerName();
+  startingCondition();
+});
+//for restart button
+let reStartBtn = document.querySelector('.btn--new');
+//adding event for restart button
+reStartBtn.addEventListener('click', function () {
+  firstPageInfo.classList.remove('hidden');
+  secondPage.classList.add('hidden');
+  document.querySelector('.PLAYER2Name').value = '';
+  document.querySelector('.PLAYER1Name').value = '';
+});
+
+//Selecting and storing player score in variable for second part
 let AcivePlayer1 = document.querySelector('.player--0');
 let AcivePlayer2 = document.querySelector('.player--1');
 let player1TotalScore = document.getElementById('score--0');
 let player2TotalScore = document.getElementById('score--1');
+let BothCurrentCore = document.querySelector('.current-score');
 //defining different button
 let rollDice = document.querySelector('.btn--roll');
 let holdButton = document.querySelector('.btn--hold');
-//player name
-const player1Name = document.getElementById('name--0');
-const player2Name = document.getElementById('name--1');
 //selecting current score in variable
 let currentScore1 = document.getElementById('current--0');
 let currentScore2 = Number(document.getElementById('current--1'));
@@ -21,10 +60,6 @@ let activePlayer = 0;
 let totalScore = [0, 0];
 let RunningGame = true;
 
-//starting condition
-player1TotalScore.textContent = 0;
-player2TotalScore.textContent = 0;
-diceImage.classList.add('hide');
 //Defining fuction for switchin player
 let switchPlayer = function () {
   //first switching current score to 0
@@ -43,7 +78,7 @@ let switchPlayer = function () {
 rollDice.addEventListener('click', function () {
   if (RunningGame) {
     //adding dice image
-    diceImage.classList.remove('hide');
+    diceImage.classList.remove('hidden');
     //generating random value and storing dice roll in varaible
     let diceRoll = Math.floor(Math.random() * 6) + 1;
     if (diceRoll != 1) {
