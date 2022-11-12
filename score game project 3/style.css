@@ -165,6 +165,9 @@ main {
   font-weight: 700;
   color: #c7365f;
 }
-.hide {
+.hidden {
   display: none;
+}
+.btn:hover {
+  background-color: rgba(217, 221, 225, 0.852);
 }
