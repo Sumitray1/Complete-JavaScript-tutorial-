@@ -23,13 +23,6 @@ let changingPlayerName = function () {
   player1Name.textContent = firsPlayerName;
   player2Name.textContent = secondPlayerName;
 };
-//switching from first page to second page
-firstPage.addEventListener('click', function () {
-  firstPageInfo.classList.add('hidden');
-  secondPage.classList.remove('hidden');
-  changingPlayerName();
-  startingCondition();
-});
 //for restart button
 let reStartBtn = document.querySelector('.btn--new');
 //adding event for restart button
@@ -116,4 +109,12 @@ holdButton.addEventListener('click', function () {
       switchPlayer();
     }
   }
+});
+
+//switching from first page to second page
+firstPage.addEventListener('click', function () {
+  firstPageInfo.classList.add('hidden');
+  secondPage.classList.remove('hidden');
+  changingPlayerName();
+  startingCondition();
 });
