@@ -20,4 +20,13 @@ const [firstFirstName, secondFirstName, ...restFirstName] = firstName;
 console.log(firstFirstName);
 console.log(secondFirstName);
 console.log(restFirstName);
-//
+
+//we can also use resrt operator to create a function which will accept unlimated number of  we need to pass in the fucnction by folllowing below steps -------------------->
+function sumUnilmatedNumber(...number) {
+  let sum = 0;
+  for (let i = 0; i < number.length; i++) {
+    sum += number[i];
+  }
+  return sum;
+}
+console.log(sumUnilmatedNumber(2, 4, 5));
