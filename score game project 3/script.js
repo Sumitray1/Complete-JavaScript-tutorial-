@@ -7,21 +7,32 @@ let secondPage = document.querySelector('.main-Content');
 //player name
 let player1Name = document.getElementById('name--0');
 let player2Name = document.getElementById('name--1');
+let buttonClose = document.querySelector('.btn--close');
+let rulePage = document.querySelector('.rules');
+let gameRules = document.querySelector('.btn--rule');
 //staring page player name
 
 //starting condition
-let startingCondition = function () {
+function startingCondition() {
   player1TotalScore.textContent = 0;
   player2TotalScore.textContent = 0;
   diceImage.classList.add('hidden');
-  BothCurrentCore.textContent = 0;
-};
+  document.getElementById('current--0').textContent = 0;
+  document.getElementById('current--1').textContent = 0;
+  AcivePlayer1.classList.add('player--active');
+  AcivePlayer2.classList.remove('player--active');
+}
 
 let changingPlayerName = function () {
   let firsPlayerName = document.querySelector('.PLAYER2Name').value;
   let secondPlayerName = document.querySelector('.PLAYER1Name').value;
-  player1Name.textContent = firsPlayerName;
-  player2Name.textContent = secondPlayerName;
+  if (firsPlayerName != '' || secondPlayerName != '') {
+    player1Name.textContent = firsPlayerName;
+    player2Name.textContent = secondPlayerName;
+  } else {
+    player1Name.textContent = 'PLAYER 1';
+    player2Name.textContent = 'PLAYER 2';
+  }
 };
 //for restart button
 let reStartBtn = document.querySelector('.btn--new');
@@ -38,7 +49,6 @@ let AcivePlayer1 = document.querySelector('.player--0');
 let AcivePlayer2 = document.querySelector('.player--1');
 let player1TotalScore = document.getElementById('score--0');
 let player2TotalScore = document.getElementById('score--1');
-let BothCurrentCore = document.querySelector('.current-score');
 //defining different button
 let rollDice = document.querySelector('.btn--roll');
 let holdButton = document.querySelector('.btn--hold');
@@ -117,4 +127,14 @@ firstPage.addEventListener('click', function () {
   secondPage.classList.remove('hidden');
   changingPlayerName();
   startingCondition();
+});
+//button close of rules
+buttonClose.addEventListener('click', function () {
+  rulePage.classList.add('hide');
+  firstPageInfo.classList.remove('hidden');
+});
+//button for rules of the game
+gameRules.addEventListener('click', function () {
+  firstPageInfo.classList.add('hidden');
+  rulePage.classList.remove('hide');
 });

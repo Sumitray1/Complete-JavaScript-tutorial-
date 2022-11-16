@@ -185,6 +185,18 @@ header {
   overflow: hidden;
   display: flex;
 }
+.rules {
+  position: absolute;
+  width: 93.5rem;
+  height: 59rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgb(0 0 0 / 25%);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+}
 .first {
   position: absolute;
   font-size: 7.2rem;
@@ -196,7 +208,6 @@ header {
   font-weight: bolder;
   color: rgb(246, 247, 244);
 }
-
 .Player1 {
   position: relative;
   display: block;
@@ -208,6 +219,35 @@ header {
   font-weight: bold;
   color: rgb(246, 247, 244);
   margin: 186px 99px;
+}
+
+.rulesList {
+  position: relative;
+  display: block;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  word-spacing: 1.9px;
+  font-weight: 300;
+  font-weight: bold;
+  color: rgb(246, 247, 244);
+  margin: 173px 99px;
+}
+
+.creator {
+  margin: 543px 380px;
+  position: inherit;
+  display: block;
+  text-align: right;
+}
+.creator {
+  margin: 543px 380px;
+  position: inherit;
+  display: block;
+  text-align: right;
+}
+.hide {
+  display: none;
 }
 .Player2 {
   position: relative;
@@ -222,7 +262,10 @@ header {
   margin-top: 186px;
   margin-left: 240px;
 }
-
+#profile {
+  border-radius: 73px;
+  height: 26%;
+}
 .PLAYER1Name {
   position: absolute;
   display: block;
@@ -247,7 +290,11 @@ header {
   background-color: #fbdfe0;
   border-width: 0;
 }
-
+.btn--close {
+  left: 77rem;
+  top: -67%;
+  background-color: transparent;
+}
 .btn--start {
   top: 39.3rem;
 }
