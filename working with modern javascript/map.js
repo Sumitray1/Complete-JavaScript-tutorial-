@@ -50,7 +50,7 @@ firstMap.set(array, 'position');
 console.log(firstMap.get(array));
 console.log(firstMap);
 
-//               <<------------------------------------------------MAP ITERATION------------------------------------------------->>
+//  <<------------------------------------------------MAP ITERATION------------------------------------------------->>
 
 //So in previous session we learn about how to add the value to map by using "get" method but in this session we will learn new method of putting value to the map. So let's begin ---->
 
@@ -68,3 +68,26 @@ const secondMap = new Map([
 ]);
 console.log(secondMap);
 // we can also covert array to map ------------->
+
+//defining object
+const firstObject = {
+  Name: 'abhi',
+  Work: 'account',
+  workinHrs: 5,
+};
+//converting array to  map
+const objectMap = new Map(Object.entries(firstObject));
+console.log(objectMap);
+
+//we can also use iterrable to maps for example
+//example--->
+for (const [key, value] of secondMap) {
+  console.log(`${key}-->${value}`);
+}
+//we can  also covert map to array ----->
+const mapArray = [...firstMap];
+console.log(mapArray);
+//simalry we can get keys and value of the map like object i.e------->
+console.log([...firstMap.keys()]);
+console.log([...firstMap.values()]);
+console.log(firstMap);
