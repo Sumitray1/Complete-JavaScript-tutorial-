@@ -1,7 +1,7 @@
 'use strict';
 //so lets begin with the string in js ------------>
 
-const fullName = 'sumit kumar  Ray';
+const fullName = 'sumit kumar Ray';
 const age = '2023';
 //so just like array we can get elemt from every position of the string---->
 console.log(fullName[2]);
@@ -49,3 +49,47 @@ sitCheck('11');
 console.log(
   '-----------------------------------------------------STRING PART 2--------------------------------------------------------'
 );
+
+//to cover the lattar in upper or lower case we need to do this ------>
+const firstNameUpperCase = fullName.toUpperCase();
+console.log(firstNameUpperCase); //to cover in uper case
+//to conver in the lower case we need to do this ------>
+const FirstLowerCase = fullName.toLowerCase();
+console.log(FirstLowerCase);
+
+//----REAL LIFE EXAMPLE 1 -----
+
+const passangeFirstName = 'suMiT';
+const passangeFirstNameLowerCase = passangeFirstName.toLocaleLowerCase();
+const passangeFirstCorrectOrder =
+  passangeFirstNameLowerCase[0].toLocaleUpperCase() +
+  passangeFirstNameLowerCase.slice(1);
+console.log(passangeFirstCorrectOrder);
+
+// ---- REAL LIFE EXAMPLE 2 -----
+//to trim all the white space we need to call stringName.trim();
+
+const email = '  SumitRay@gmail.com';
+const lowerEmail = email.toLowerCase();
+const correctEmail = lowerEmail.trim();
+console.log(correctEmail);
+
+//instead of doing this as above we can do it in just one line:---->
+const perfectEmail = email.toLowerCase().trim();
+console.log(perfectEmail);
+
+//---- REAL LIFE EXAMPLE 3 -------
+//replacing string
+const announcement = 'All the passanger come to door 23. Boarding door 23!';
+console.log(announcement.replaceAll('door', 'gate'));
+
+//------------- Boolen in Js-------->
+
+//to check your string contains any latar or words in it or not just do this ---stringName.include('latter or words')
+//example--->
+console.log(announcement.includes('the'));
+//to check string start with this lattar or word or not
+console.log(announcement.startsWith('sum'));
+console.log(announcement.startsWith('All'));
+//to check our string ends wit mention condition or not
+console.log(announcement.endsWith('!'));
