@@ -1,6 +1,6 @@
 // 'use strict';
 // const restaurant = {
-//   name: 'chinese',
+//   fullName: 'chinese',
 //   location: 'patily',
 // };
 // if (restaurant.openingHours && restaurant.openingHours.mon) {

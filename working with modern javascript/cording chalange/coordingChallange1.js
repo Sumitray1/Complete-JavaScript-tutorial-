@@ -35,7 +35,7 @@
 //     for (i = 0; i < players.length; i++) {
 //       console.log(` \n ${players[i]}  `);
 //     }
-//     console.log(`\n total score ${this.score}\n total name intered =${i}`);
+//     console.log(`\n total score ${this.score}\n total fullName intered =${i}`);
 //   },
 //   score: '4:0',
 //   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],

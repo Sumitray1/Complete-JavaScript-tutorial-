@@ -4,13 +4,13 @@
 let firstPage = document.querySelector('.btn--start');
 let firstPageInfo = document.querySelector('.header');
 let secondPage = document.querySelector('.main-Content');
-//player name
-let player1Name = document.getElementById('name--0');
-let player2Name = document.getElementById('name--1');
+//player fullName
+let player1fullName = document.getElementById('fullName--0');
+let player2fullName = document.getElementById('fullName--1');
 let buttonClose = document.querySelector('.btn--close');
 let rulePage = document.querySelector('.rules');
 let gameRules = document.querySelector('.btn--rule');
-//staring page player name
+//staring page player fullName
 
 //starting condition
 function startingCondition() {
@@ -23,15 +23,15 @@ function startingCondition() {
   AcivePlayer2.classList.remove('player--active');
 }
 
-let changingPlayerName = function () {
-  let firsPlayerName = document.querySelector('.PLAYER2Name').value;
-  let secondPlayerName = document.querySelector('.PLAYER1Name').value;
-  if (firsPlayerName != '' || secondPlayerName != '') {
-    player1Name.textContent = firsPlayerName;
-    player2Name.textContent = secondPlayerName;
+let changingPlayerfullName = function () {
+  let firsPlayerfullName = document.querySelector('.PLAYER2fullName').value;
+  let secondPlayerfullName = document.querySelector('.PLAYER1fullName').value;
+  if (firsPlayerfullName != '' || secondPlayerfullName != '') {
+    player1fullName.textContent = firsPlayerfullName;
+    player2fullName.textContent = secondPlayerfullName;
   } else {
-    player1Name.textContent = 'PLAYER 1';
-    player2Name.textContent = 'PLAYER 2';
+    player1fullName.textContent = 'PLAYER 1';
+    player2fullName.textContent = 'PLAYER 2';
   }
 };
 //for restart button
@@ -40,8 +40,8 @@ let reStartBtn = document.querySelector('.btn--new');
 reStartBtn.addEventListener('click', function () {
   firstPageInfo.classList.remove('hidden');
   secondPage.classList.add('hidden');
-  document.querySelector('.PLAYER2Name').value = '';
-  document.querySelector('.PLAYER1Name').value = '';
+  document.querySelector('.PLAYER2fullName').value = '';
+  document.querySelector('.PLAYER1fullName').value = '';
 });
 
 //Selecting and storing player score in variable for second part
@@ -125,7 +125,7 @@ holdButton.addEventListener('click', function () {
 firstPage.addEventListener('click', function () {
   firstPageInfo.classList.add('hidden');
   secondPage.classList.remove('hidden');
-  changingPlayerName();
+  changingPlayerfullName();
   startingCondition();
 });
 //button close of rules

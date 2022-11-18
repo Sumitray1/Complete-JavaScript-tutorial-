@@ -60,10 +60,10 @@
 // //challange 3----->
 // console.log('------------challange 3------------');
 // const oddData = Object.values(game.odds);
-// const keysName = [game.team1, 'draw', game.team2];
-// console.log(keysName);
+// const keysfullName = [game.team1, 'draw', game.team2];
+// console.log(keysfullName);
 // for (let i = 0; i < oddData.length; i++) {
-//   console.log(`Odds of ${keysName[i]}: ${oddData[i]}`);
+//   console.log(`Odds of ${keysfullName[i]}: ${oddData[i]}`);
 // }
 // //challange 3 mention method =>
 // for (const [team, value] of Object.entries(game.odds)) {

@@ -1,11 +1,11 @@
 // 'use strict';
 // const cafe = {
-//   Name: 'morning cafe',
+//   fullName: 'morning cafe',
 //   Menu: ['pasta', 'momo', 'tea', 'coffee', 'Almond'],
 //   OpeningHours: 'sunday to friday open everyday',
 // };
 
-// //we can print all the properties name of the object just by doing this -------->
+// //we can print all the properties fullName of the object just by doing this -------->
 // console.log(Object.keys(cafe)); //vill print in array
 // //if we want to print the value in string then we need to do this -------->
 // for (const title of Object.keys(cafe)) {

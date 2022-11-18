@@ -1,5 +1,5 @@
 'use strict';
-const player1Name = [
+const player1fullName = [
   'sumit',
   'amit',
   'partik',
@@ -12,7 +12,7 @@ const player1Name = [
   'sanjay',
   'samir',
 ];
-const player2Name = [
+const player2fullName = [
   'sanakar',
   'samarat',
   'sudarsan',
@@ -25,8 +25,8 @@ const player2Name = [
   'unique',
   'bibeek',
 ];
-const [player1Goalkeeper, ...player1Restplayer] = player1Name;
-const [player2Goalkeeper, ...player2Restplayer] = player2Name;
+const [player1Goalkeeper, ...player1Restplayer] = player1fullName;
+const [player2Goalkeeper, ...player2Restplayer] = player2fullName;
 console.log('----------------------------------------------------------------');
 console.log(player1Goalkeeper);
 console.log('----------------------------------------------------------------');
@@ -36,8 +36,8 @@ console.log(player1Restplayer);
 console.log('----------------------------------------------------------------');
 console.log(player2Restplayer);
 console.log('-------------------------total player----------');
-const BothTeamPlayerall = [...player1Name, ...player2Name];
+const BothTeamPlayerall = [...player1fullName, ...player2fullName];
 console.log(BothTeamPlayerall);
 console.log('---------------Team First Final Player list----------');
-const player1FinalList = ['thiago', 'coutinho', 'perisic', ...player1Name];
+const player1FinalList = ['thiago', 'coutinho', 'perisic', ...player1fullName];
 console.log(player1FinalList);

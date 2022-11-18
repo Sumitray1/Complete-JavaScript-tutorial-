@@ -13,7 +13,6 @@
 // const attemptThird = Number(prompt(`for team kolas
 // Enter your third attempt score: ....`));
 
-// const averageScore = (teamName, firstAttempt, secondAttempt, thirdAttempt) => console.log((`Average score of ${teamName} is ${(firstAttempt + secondAttempt + thirdAttempt) / 3}`));
+// const averageScore = (teamfullName, firstAttempt, secondAttempt, thirdAttempt) => console.log((`Average score of ${teamfullName} is ${(firstAttempt + secondAttempt + thirdAttempt) / 3}`));
 // averageScore('Dolphin ', firstAttempt, secondAttempt, thirdAttempt);
 // averageScore('kolas ', attemptfirst, attemptSecond, attemptThird);
-

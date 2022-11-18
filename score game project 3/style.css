@@ -46,7 +46,7 @@ main {
 }
 
 /* ELEMENTS */
-.name {
+.fullName {
   position: relative;
   font-size: 4rem;
   text-transform: uppercase;
@@ -66,7 +66,7 @@ main {
 .player--active {
   background-color: rgba(255, 255, 255, 0.4);
 }
-.player--active .name {
+.player--active .fullName {
   font-weight: 700;
   border: 2px solid rgb(21, 17, 17);
   border-radius: 5px;
@@ -163,7 +163,7 @@ main {
   background-color: #2f2f2f;
 }
 
-.player--winner .name {
+.player--winner .fullName {
   font-weight: 700;
   color: #c7365f;
 }
@@ -266,7 +266,7 @@ header {
   border-radius: 73px;
   height: 26%;
 }
-.PLAYER1Name {
+.PLAYER1fullName {
   position: absolute;
   display: block;
   margin: 268px 700px;
@@ -278,7 +278,7 @@ header {
   background-color: #fbdfe0;
   border-width: 0;
 }
-.PLAYER2Name {
+.PLAYER2fullName {
   position: absolute;
   display: block;
   margin: 268px 99px;

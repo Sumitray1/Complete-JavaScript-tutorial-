@@ -1,7 +1,7 @@
 // 'use strict';
 
 // const sumitCompanhy = {
-//   Name: 'Sumit Cafe',
+//   fullName: 'Sumit Cafe',
 //   lunch: ['pizza', 'burger', 'chicken', 'chicken Birayani'],
 //   Address: 'jaleshwor chowk-4',
 //   sweets: ['Iceream', 'pine cake ', 'Honey', 'lassy'],

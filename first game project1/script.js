@@ -1,5 +1,5 @@
 'use strict';
-// // her "document.querySelector('.ClassName') is use for selection of class"
+// // her "document.querySelector('.ClassfullName') is use for selection of class"
 // //where '.textContent' is used for selecting text on that class.
 // document.querySelector('.message').textContent = 'fuck gassing';
 // document.querySelector('.score').textContent = 0;
