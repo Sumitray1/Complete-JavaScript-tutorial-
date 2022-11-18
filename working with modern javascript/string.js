@@ -93,3 +93,64 @@ console.log(announcement.startsWith('sum'));
 console.log(announcement.startsWith('All'));
 //to check our string ends wit mention condition or not
 console.log(announcement.endsWith('!'));
+
+//----------------------------------------------------------------STRING PART 2------------------------------------------------------------------
+console.log(
+  '-----------------------------------------------------STRING PART 3-------------------------------------------------------------------------'
+);
+//for example if we a string like fullname and we want to sstore first and last name in different variable  which is seperated by spaces then we can use "stringName.split('required condition)" function--->
+const fName = 'sumit Ray';
+const [firstPart, lastPart] = fName.split(' ');
+console.log(firstPart);
+console.log(lastPart);
+
+//joining the string from array
+const uniqueName = ['Mr', firstPart, lastPart.toLocaleLowerCase()].join('_');
+console.log(uniqueName);
+
+//------------REAL LIFE EXAMPLE ----------------
+//just make a function that make first latter of first middle and last name to upper case
+
+//1> first method------>
+function makeUpperCase(name) {
+  const divName = name.split(' ');
+  const modifiedName = [];
+  for (const part of divName) {
+    modifiedName.push(part.replace(part[0], part[0].toUpperCase()));
+  }
+  console.log(modifiedName.join(' '));
+}
+makeUpperCase('sumit ray');
+
+//2> first method------>
+function upperCase(name) {
+  const divName = name.split(' ');
+  const modifiedName = [];
+  for (const part of divName) {
+    modifiedName.push(part[0].toUpperCase() + part.slice(1));
+  }
+  console.log(modifiedName.join(' '));
+}
+upperCase('abhinay ray');
+
+//<---------- padding -------->
+
+//method pads the current string with another string (multiple times, if needed) until the resulting string reaches the given length. The padding is applied from the start of the current string.
+
+//Example ------>
+const nameS = 'my name is sumit ray....';
+console.log(nameS.padStart(30, '+'));
+
+//padding real life Example ------>
+//just make a string that retuns last 2 number and remaning with * like -->*********14
+function hideNumber(number) {
+  const numberToString = String(number);
+  const last2 = numberToString.slice(-2);
+  return last2.padStart(numberToString.length, '*');
+}
+console.log(hideNumber(9844030942));
+
+//----> repeting string is the in built features of javascript that allow us to repeat the number of times we want ot repaet sting
+const repeatNameS = nameS.repeat(5);
+
+console.log(repeatNameS);
