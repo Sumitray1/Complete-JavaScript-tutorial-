@@ -4,6 +4,9 @@
 //defult argument is bassically used when we the value of some item is known or fixed like interest.
 
 //Defining a funtion with defult argument for a flight ticket so lets begin -->
+console.log(
+  '----------------------------------------------------------------------------------------Function with defult argument------------------------------------------------------'
+);
 const flightTicketDetails = [];
 function flightTicket(
   name,
@@ -27,6 +30,9 @@ flightTicket('abhinav ray', 3);
 flightTicket('sumit Ray', undefined, 1000);
 
 // ---------------------------------------------004 How Passing Arguments Works_ Value vs. Reference---------------------------------------
+console.log(
+  '---------------------------------------------004 How Passing Arguments Works_ Value vs. Reference---------------------------------------'
+);
 
 //In this session we will rearn about how function arguments worked for different kind of varaible
 //so lets begin with the example-->
@@ -39,11 +45,11 @@ const PassDetails = {
 function checkedIn(flight, details) {
   flight = 'jnk112';
   details.name = 'Mr. ' + details.name;
-  if (details.passportNo === 9844030942) {
-    alert('checkd in ');
-  } else {
-    alert('wrong passport');
-  }
+  //   if (details.passportNo === 9844030942) {
+  // alert('checkd in ');
+  //   } else {
+  // alert('wrong passport');
+  //   }
   console.log(flight);
   console.log(details);
 }
@@ -59,3 +65,16 @@ console.log(PassDetails);
 //where as when we pass any object to the function which is outside from the function then its reference  address is passed which means when we made any change inside the function then its original variable value is also changed.
 
 //Note--> In javascript we can pass function by value . we cannot pass function by reference in javascript.
+
+//----------------------------------------------005 First-Class and Higher-Order Functions--------------------------------------------------
+console.log(
+  '----------------------------------------------005 First-Class and Higher-Order Functions--------------------------------------------------'
+);
+/*javascript funhction are called first class function because ----->
+
+javascript treats function as 'first-class-citizens'
+this means that function are simply values and function are just another type of object.
+
+HIGHER-ORDER FUNCTIONS  are those type of function that recives as argument, that returns a new function or both 
+this is only possible because of first class functions.  
+*/
