@@ -78,3 +78,26 @@ this means that function are simply values and function are just another type of
 HIGHER-ORDER FUNCTIONS  are those type of function that recives as argument, that returns a new function or both 
 this is only possible because of first class functions.  
 */
+
+//.............................................FUNCTION ACCEPTING OTHER FUNCTION AS INPUT -----------------------------------------------
+
+//In javascript we can pass function with other function as argument with passing it valus that is we cacl function inside function with out passing there argumnet.
+
+//Example ------>
+//lets call a funtion that accept the string and remove all the white spaces.
+
+function spaceTrim(string) {
+  return string.replaceAll(' ', '').toLowerCase();
+}
+
+//now creating a function and passing string to it with
+//higer order function
+function passFunc(sting, funn) {
+  console.log(`original String: ${sting}`);
+  console.log(`transformed String: ${funn(sting)}`);
+  console.log(`Transformed by : ${funn.name}`); //checks the function name
+}
+console.log(
+  `----------------------FUNCTION CHECK----------------------------------- `
+);
+passFunc('this is SUMIT Ray', spaceTrim);
