@@ -171,3 +171,34 @@ ticketbook.call(nepalAirlinr, 21, 'nav');
 //apply method
 const details = [506, 'sanoth'];
 ticketbook.apply(airline, details);
+
+//-----------------------------------------------------------------009 The bind Method-----------------------------------------------------------------------
+
+//just like call method bind also allows to set manually function call but it doesnt call the function but it returns a new function where this keyword is bind
+const newbooking = ticketbook.bind(airline);
+newbooking(11, 'Rakhi ray');
+//we can also set defult arguments value in this bind method so that we dont have to definie it every time.
+
+//Example--->
+const flight23 = ticketbook.bind(airline, 23);
+flight23('momy');
+flight23('papa');
+console.log(airline);
+
+//so lets take it one step further and define a function for tax
+function addTax(rate, values) {
+  return values + values * rate;
+}
+console.log(addTax(0.1, 200));
+// so we want use here to bind method for defult value we can do this here  for defult value in add tax funtion
+const addVat = addTax.bind(null, 0.1);
+console.log(addVat(200));
+console.log(addVat(100));
+//lets recall one function returning other function here
+function adDTax(rate) {
+  return function (values) {
+    return values + values * rate;
+  };
+}
+const rate = adDTax(0.1);
+console.log(rate(200));
