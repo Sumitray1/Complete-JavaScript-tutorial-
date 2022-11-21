@@ -98,6 +98,28 @@ function passFunc(sting, funn) {
   console.log(`Transformed by : ${funn.name}`); //checks the function name
 }
 console.log(
-  `----------------------FUNCTION CHECK----------------------------------- `
+  `----------------------FUNCTION CHECK-----------------------------------`
 );
 passFunc('this is SUMIT Ray', spaceTrim);
+
+//----------------------------------------------------------------007 Functions Returning Functions---------------------------
+
+//In this session we will learn about the fuhnction returning other function as so lets begin witha example
+//example--->
+//here we are creating a function which take a argument and also return other function
+
+function greet(greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+}
+
+const greeter = greet('hey'); //so here greeter become a function.
+
+//now calling this function with greeter
+greeter('sumit');
+greeter('abhi');
+//we can also call this by
+greet('hey')('sumit');
+
+// ------------------------------008 The call and apply Methods-------------------------------------------------
