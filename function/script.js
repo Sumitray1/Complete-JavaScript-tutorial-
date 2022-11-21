@@ -123,6 +123,51 @@ greeter('abhi');
 greet('hey')('sumit');
 
 // ------------------------------008 The call and apply Methods-------------------------------------------------
+console.log(
+  '------------------008 The call and apply Methods-----------------'
+);
 //in this session we will learn about defining this keyboard manually  so lets begin with first example
 
-//defining a function for
+//defining a object for flight details
+
+const nepalAirlinr = {
+  Name: 'Buddha Airline',
+  code: 'BDH',
+  booking: [],
+  book(flightNumber, name) {
+    console.log(
+      `${name} has booked the ticket  of ${this.Name} of  sit ${this.code}${flightNumber}`
+    );
+    this.booking.push({ flight: `${this.code}${flightNumber}`, name });
+  },
+};
+nepalAirlinr.book(10, 'Sumit Ray');
+console.log(nepalAirlinr);
+
+//when we will try to store this function in any other variable an then calling this funtion let see what happens
+/*
+//this will not work 
+const ticketbook = nepalAirlinr.book;
+ticketbook(21, 'abhinav');
+*/
+
+//this will display  error as this keyword is undefined outside the object
+/*
+//so get ride of this error we have three method to do this i.e is 
+1--> call method
+2--> apply method
+3--> bind method
+*/
+const airline = {
+  Name: 'yeti Airline',
+  code: 'YTE',
+  booking: [],
+};
+//call method//here object property should be same
+const ticketbook = nepalAirlinr.book;
+ticketbook.call(airline, 21, 'abhinav');
+ticketbook.call(nepalAirlinr, 21, 'nav');
+
+//apply method
+const details = [506, 'sanoth'];
+ticketbook.apply(airline, details);
