@@ -123,3 +123,6 @@ greeter('abhi');
 greet('hey')('sumit');
 
 // ------------------------------008 The call and apply Methods-------------------------------------------------
+//in this session we will learn about defining this keyboard manually  so lets begin with first example
+
+//defining a function for
