@@ -62,3 +62,49 @@ console.log(arrJoin.join('_'));
 let arr5 = ['a', 'b', 'c', 'd', 'e', 'f'];
 console.log(arr5.at(2));
 console.log(arr5.at(-1));
+
+//-------------------------------------------------------------------005 Looping Arrays_ forEach----------------------------------------------------
+//-->it is almost simar to for loop .BUt  FOR EACH  method is higher order function which require a return function. let us see example between this method and and for loop .
+let deposit = [1000, 3000, -400, 3000, -9000];
+//for loop
+for (const money of deposit) {
+  if (money > 1) {
+    console.log(`money deposit: ${money}`);
+  } else {
+    console.log(`money withdrwan: ${money}`);
+  }
+}
+//for each method
+console.log(
+  '---------------------FOR EACH METHOD----------------------------------------------------'
+);
+deposit.forEach(function (money) {
+  if (money > 1) {
+    console.log(`money deposit: ${money}`);
+  } else {
+    console.log(`money withdrwan: ${money}`);
+  }
+});
+//WHILE USING INDEX AND VALUES
+//for loop
+console.log('--------------for loop-------------------');
+let deposit1 = [1000, 3000, -400, 3000, -9000];
+//for loop
+for (const [i, money] of deposit1.entries()) {
+  if (money > 1) {
+    console.log(`movement ${i}: money deposit: ${money}`);
+  } else {
+    console.log(`movement ${i}: money withdrwan: ${money}`);
+  }
+}
+//for each
+console.log('---------------for each--------------');
+deposit1.forEach(function (money, i, value) {
+  if (money > 1) {
+    console.log(`movement ${i}: money deposit: ${money}`);
+  } else {
+    console.log(`movement ${i}: money withdrwan: ${money}`);
+  }
+});
+
+///note continue and break statement doesnot work in for each method.
