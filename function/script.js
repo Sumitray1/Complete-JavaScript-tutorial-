@@ -202,3 +202,19 @@ function adDTax(rate) {
 }
 const rate = adDTax(0.1);
 console.log(rate(200));
+//----------------------------------------------011 Immediately Invoked Function Expressions (IIFE)-----------------------------------
+console.log(
+  '------------------------------011 Immediately Invoked Function Expressions (IIFE)----------------------------------'
+);
+//some time we only need to run a function for just once so in javascript we can do this called as 011 Immediately Invoked Function Expressions (IIFE) by  given example below--->
+
+//1> first method------>
+
+(function () {
+  console.log(`fucnction inside this can can be called only once `);
+})(); //here function need to pass inside paranthesis and all after this as mentioned above.
+
+//1> second method------>     ARROW FUNCTION
+(() => console.log('this function is made for calling once '))();
+
+//------------------------------------------------------012 Closures----------------------------------------------------------------------------------------------
