@@ -108,3 +108,5 @@ deposit1.forEach(function (money, i, value) {
 });
 
 ///note continue and break statement doesnot work in for each method.
+
+//------------------006 forEach With Maps and Sets----------------------------------------------------
