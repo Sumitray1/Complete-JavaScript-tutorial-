@@ -90,3 +90,27 @@ const displayMovements = function (movement) {
   });
 };
 displayMovements(account1.movements);
+
+//creaating a function that convet owner full name to user account sign in name
+const createUserName = function (accountDetails) {
+  accountDetails.forEach(function (accountDetails) {
+    accountDetails.UserName = accountDetails.owner
+      .split(' ')
+      .map(function (name) {
+        return name[0];
+      })
+      .join('')
+      .toLowerCase();
+  });
+};
+const user = 'Jonas Schmedtmann';
+const userName = user
+  .split(' ')
+  .map(function (name) {
+    return name[0];
+  })
+  .join('')
+  .toLowerCase();
+console.log(userName);
+createUserName(accounts);
+console.log(accounts);
