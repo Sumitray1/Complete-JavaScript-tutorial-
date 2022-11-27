@@ -91,6 +91,16 @@ const displayMovements = function (movement) {
 };
 displayMovements(account1.movements);
 
+//to display  total money in account creating function
+const displayMomentsMoney = function (money) {
+  const totalBalance = money.reduce(function (acc, mon) {
+    return acc + mon;
+  }, 0);
+  console.log(totalBalance);
+  labelBalance.textContent = `${totalBalance} 💰`;
+};
+displayMomentsMoney(account1.movements);
+
 //creaating a function that convet owner full name to user account sign in name
 const createUserName = function (accountDetails) {
   accountDetails.forEach(function (accountDetails) {
@@ -111,6 +121,3 @@ const userName = user
   })
   .join('')
   .toLowerCase();
-console.log(userName);
-createUserName(accounts);
-console.log(accounts);
