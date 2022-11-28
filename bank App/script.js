@@ -84,20 +84,41 @@ const displayMovements = function (movement) {
     const html = `
   <div class="movements__row">
     <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
-    <div class="movements__value">${mov}</div>
+    <div class="movements__value">${mov}💰</div>
   </div>`;
     containerMovements.insertAdjacentHTML('afterbegin', html); //to insert html containt in webpage exictely same
   });
 };
 displayMovements(account1.movements);
+//displaying in out and total in the bank
+
+const displaydepositAndWithdrawlMoney = function (movement) {
+  const deposit = movement
+    .filter(money => money > 0)
+    .reduce((depst, mov) => mov + depst, 0);
+  labelSumIn.textContent = `${deposit}💰`;
+  const withdrawal = movement
+    .filter(mov => mov < 0)
+    .reduce((withdrl, money) => withdrl + money, 0);
+  labelSumOut.textContent = `${Math.abs(withdrawal)}⛔`;
+
+  const intrest = movement
+    .filter(mov => mov > 0)
+    .map(function (deposit) {
+      return (deposit * 2.6) / 100;
+    })
+    .reduce((add, intrst) => add + intrst, 0);
+  labelSumInterest.textContent = `${intrest.toFixed(2)}💰`;
+};
+displaydepositAndWithdrawlMoney(account1.movements);
 
 //to display  total money in account creating function
 const displayMomentsMoney = function (money) {
   const totalBalance = money.reduce(function (acc, mon) {
     return acc + mon;
   }, 0);
-  console.log(totalBalance);
-  labelBalance.textContent = `${totalBalance} 💰`;
+
+  labelBalance.textContent = `${totalBalance}💰`;
 };
 displayMomentsMoney(account1.movements);
 
