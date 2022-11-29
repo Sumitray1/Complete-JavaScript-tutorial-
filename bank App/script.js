@@ -186,8 +186,26 @@ btnTransfer.addEventListener('click', function (e) {
     //doing transfer
     currentAccount.movements.push(-transferAmount);
     transferAccount.movements.push(transferAmount);
+    uiUpdate(currentAccount);
+  } else {
   }
-  uiUpdate(currentAccount);
+  inputTransferAmount.value = inputTransferTo.value = '';
 });
 
+//adding event listener for close button
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault(); //prevent from defult realoding
+  if (
+    inputCloseUsername.value == currentAccount.UserName &&
+    currentAccount.pin == Number(inputClosePin.value)
+  ) {
+    console.log('wright input');
+    const findAccount = accounts.findIndex(
+      acc => acc.UserName == currentAccount.UserName
+    );
+    accounts.splice(findAccount, 1);
+    inputCloseUsername.value = inputClosePin.value = '';
+    containerApp.style.opacity = 0;
+  }
+});
 console.log(accounts);
