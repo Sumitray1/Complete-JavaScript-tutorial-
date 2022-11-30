@@ -209,3 +209,16 @@ btnClose.addEventListener('click', function (e) {
   }
 });
 console.log(accounts);
+//defining loan approval
+btnLoan.addEventListener('click', function (e) {
+  e.preventDefault(); //prevent from defult realoding
+  const loanAmount = Number(inputLoanAmount.value);
+  if (
+    loanAmount > 0 &&
+    currentAccount.movements.some(loan => loan >= loanAmount * 0.2)
+  ) {
+    currentAccount.movements.push(loanAmount);
+  }
+  uiUpdate(currentAccount);
+  console.log(loanAmount);
+});
