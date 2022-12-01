@@ -76,7 +76,7 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const displayMovements = function (movement, sort = false) {
   containerMovements.innerHTML = ''; //set previous html containt to empty //similar to textcontent
   const movementsStoreArray = sort
-    ? movements.slice().sort((a, b) => a - b)
+    ? movement.slice().sort((a, b) => a - b)
     : movement;
   movementsStoreArray.forEach(function (mov, i) {
     let type = mov > 0 ? 'deposit' : 'withdrawal';
@@ -225,6 +225,9 @@ let sort = false;
 btnSort.addEventListener('click', function (e) {
   e.preventDefault();
   //adding event for the sort button
-  displayMovements(currentAccount.movements, !sort);
+  const movmentsUiData = [
+    ...document.querySelectorAll('.movements__value'),
+  ].map(pisa => Number(pisa.textContent.replace('💰', '')));
+  displayMovements(movmentsUiData, !sort);
   sort = !sort;
 });
