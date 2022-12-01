@@ -73,9 +73,12 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 //lets add some display change to our movment class i.e. where movement is shown
 
-const displayMovements = function (movement) {
+const displayMovements = function (movement, sort = false) {
   containerMovements.innerHTML = ''; //set previous html containt to empty //similar to textcontent
-  movement.forEach(function (mov, i) {
+  const movementsStoreArray = sort
+    ? movements.slice().sort((a, b) => a - b)
+    : movement;
+  movementsStoreArray.forEach(function (mov, i) {
     let type = mov > 0 ? 'deposit' : 'withdrawal';
     const html = `
   <div class="movements__row">
@@ -217,4 +220,11 @@ btnLoan.addEventListener('click', function (e) {
   }
   uiUpdate(currentAccount);
   console.log(loanAmount);
+});
+let sort = false;
+btnSort.addEventListener('click', function (e) {
+  e.preventDefault();
+  //adding event for the sort button
+  displayMovements(currentAccount.movements, !sort);
+  sort = !sort;
 });
