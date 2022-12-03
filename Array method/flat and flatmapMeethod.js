@@ -62,3 +62,9 @@ const allbalance = accounts
   .flatMap(acc => acc.movements)
   .reduce((acc, money) => acc + money, 0);
 console.log(allbalance);
+console.log('--challange--');
+const random = Array.from(
+  { length: 100 },
+  ran => (ran = Math.floor(Math.random() * 100))
+);
+console.log(random);
