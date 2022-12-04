@@ -167,6 +167,8 @@ btnLogin.addEventListener('click', function (e) {
     labelWelcome.style.color = 'red';
     containerApp.style.opacity = 0;
   }
+  //for updating dates
+  datesUpade();
 });
 
 //define function for ui update for fund transfer.
@@ -231,3 +233,16 @@ btnSort.addEventListener('click', function (e) {
   displayMovements(movmentsUiData, !sort);
   sort = !sort;
 });
+
+//function for update dates and time in each accounts
+function datesUpade() {
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = `${date.getMonth() + 1}`.padStart(2, 0);
+  const day = `${date.getDate()}`.padStart(2, 0);
+  const hour = date.getHours();
+  const min = date.getMinutes();
+  labelDate.textContent = `${day}/${month}/${year} ${
+    hour < 12 ? hour : hour - 12
+  }:${hour < 12 ? min + ' AM' : min + ' PM'}`;
+}
